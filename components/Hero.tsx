@@ -33,7 +33,7 @@ export default function Hero({ lang }: Props) {
         <div>
           <h1 style={{
             fontSize: "clamp(28px, 5vw, 52px)",
-            fontWeight: 600,
+            fontWeight: 300,
             letterSpacing: "-1.5px",
             lineHeight: 1.08,
             color: "var(--text)",
