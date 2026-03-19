@@ -1,19 +1,67 @@
 "use client";
 import { useState } from "react";
-import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 
+const navLinks = [
+  { href: "#about",    en: "About",    ko: "소개" },
+  { href: "#skills",   en: "Skills",   ko: "스킬" },
+  { href: "#projects", en: "Projects", ko: "프로젝트" },
+  { href: "#contact",  en: "Contact",  ko: "연락처" },
+];
+
 export default function Home() {
   const [lang, setLang] = useState<"en" | "ko">("en");
 
   return (
     <>
-      <NavWithLang lang={lang} setLang={setLang} />
-      <main>
+      {/* NAV */}
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+        background: "rgba(12,12,12,0.85)",
+        backdropFilter: "blur(20px)",
+        borderBottom: "1px solid var(--border)",
+      }}>
+        <div style={{ maxWidth: "780px", margin: "0 auto", padding: "0 24px", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <span style={{ fontFamily: "Pretendard", fontWeight: 700, fontSize: "15px", letterSpacing: "-0.3px", color: "var(--text)" }}>
+            Jonghyun Park
+          </span>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "0px" }}>
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} style={{
+                color: "var(--muted)", fontSize: "13px", fontWeight: 400,
+                padding: "6px 14px", borderRadius: "6px",
+                transition: "color 0.15s",
+              }}
+                onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
+              >
+                {lang === "en" ? l.en : l.ko}
+              </a>
+            ))}
+
+            <button onClick={() => setLang(lang === "en" ? "ko" : "en")} style={{
+              marginLeft: "8px",
+              background: "var(--surface2)", border: "1px solid var(--border)",
+              color: "var(--muted)", borderRadius: "6px",
+              padding: "4px 11px", fontSize: "11px", fontWeight: 600, cursor: "pointer",
+              transition: "color 0.15s, border-color 0.15s",
+              letterSpacing: "0.3px",
+            }}
+              onMouseEnter={e => { e.currentTarget.style.color = "var(--text)"; e.currentTarget.style.borderColor = "var(--dim)"; }}
+              onMouseLeave={e => { e.currentTarget.style.color = "var(--muted)"; e.currentTarget.style.borderColor = "var(--border)"; }}
+            >
+              {lang === "en" ? "한국어" : "EN"}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <main style={{ maxWidth: "780px", margin: "0 auto", padding: "0 24px" }}>
         <Hero lang={lang} />
         <About lang={lang} />
         <Skills lang={lang} />
@@ -21,44 +69,5 @@ export default function Home() {
         <Contact lang={lang} />
       </main>
     </>
-  );
-}
-
-// Nav wrapper that controls global lang state
-function NavWithLang({ lang, setLang }: { lang: "en" | "ko"; setLang: (l: "en" | "ko") => void }) {
-  const links = [
-    { href: "#about", en: "About", ko: "소개" },
-    { href: "#skills", en: "Skills", ko: "스킬" },
-    { href: "#projects", en: "Projects", ko: "프로젝트" },
-    { href: "#contact", en: "Contact", ko: "연락처" },
-  ];
-
-  return (
-    <nav
-      style={{ background: "rgba(10,12,16,0.95)", borderBottom: "1px solid #252a35", position: "fixed", top: 0, left: 0, right: 0, zIndex: 50, backdropFilter: "blur(16px)" }}
-    >
-      <div style={{ maxWidth: "960px", margin: "0 auto", padding: "0 28px", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <span style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "2px", color: "#1865F2", fontSize: "17px" }}>
-          JH.PARK
-        </span>
-        <div style={{ display: "flex", alignItems: "center", gap: "2px" }}>
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              style={{ color: "#7A8294", fontSize: "12px", fontWeight: 500, borderRadius: "6px", padding: "6px 12px", textDecoration: "none", whiteSpace: "nowrap" }}
-            >
-              {lang === "en" ? l.en : l.ko}
-            </a>
-          ))}
-          <button
-            onClick={() => setLang(lang === "en" ? "ko" : "en")}
-            style={{ marginLeft: "8px", background: "rgba(24,101,242,0.12)", border: "1px solid rgba(24,101,242,0.3)", color: "#1865F2", borderRadius: "6px", padding: "4px 10px", fontSize: "11px", fontWeight: 700, cursor: "pointer" }}
-          >
-            {lang === "en" ? "한국어" : "EN"}
-          </button>
-        </div>
-      </div>
-    </nav>
   );
 }

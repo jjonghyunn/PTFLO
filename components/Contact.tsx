@@ -1,36 +1,53 @@
+import { Label } from "./About";
+
 type Props = { lang: "en" | "ko" };
 
 export default function Contact({ lang }: Props) {
   return (
-    <section id="contact" style={{ padding: "80px 0", borderTop: "1px solid #252a35" }}>
-      <div className="max-w-5xl mx-auto px-7 text-center">
-        <p style={{ fontSize: "11px", fontWeight: 700, color: "#1865F2", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "10px" }}>
-          {lang === "en" ? "Get In Touch" : "연락하기"}
-        </p>
-        <h2 style={{ fontSize: "clamp(22px, 3vw, 36px)", fontWeight: 900, marginBottom: "16px", color: "#E8EBF0" }}>
-          {lang === "en" ? "Let's Connect" : "함께 이야기해요"}
-        </h2>
-        <p style={{ color: "#7A8294", fontSize: "15px", marginBottom: "36px", maxWidth: "480px", margin: "0 auto 36px" }}>
-          {lang === "en"
-            ? "Open to collaboration, feedback, or just a conversation about data."
-            : "협업, 피드백, 또는 데이터에 관한 이야기라면 언제든지 환영합니다."}
-        </p>
+    <section id="contact" style={{ paddingTop: "80px", paddingBottom: "120px", borderTop: "1px solid var(--border)" }}>
+      <Label en="Contact" ko="연락처" lang={lang} />
 
-        <a
-          href="mailto:parkjh0051@gmail.com"
-          style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#1865F2", color: "#fff", borderRadius: "10px", padding: "14px 32px", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}
-        >
-          parkjh0051@gmail.com
-        </a>
+      <h2 style={{
+        fontSize: "clamp(26px, 4vw, 42px)",
+        fontWeight: 700, letterSpacing: "-1px",
+        color: "var(--text)", lineHeight: 1.1,
+        marginBottom: "20px",
+      }}>
+        {lang === "en" ? "Let's Connect" : "함께 이야기해요"}
+      </h2>
 
-        <div style={{ marginTop: "80px", paddingTop: "32px", borderTop: "1px solid #252a35", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
-          <span style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "2px", color: "#3D4454", fontSize: "14px" }}>
-            JONGHYUN PARK · 박종현
-          </span>
-          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#3D4454" }}>
-            Data Analyst
-          </span>
-        </div>
+      <p style={{ color: "var(--muted)", fontSize: "15px", marginBottom: "40px", maxWidth: "400px", lineHeight: "1.8" }}>
+        {lang === "en"
+          ? "Open to collaboration, feedback, or just a conversation about data."
+          : "협업, 피드백, 또는 데이터에 관한 이야기라면 언제든지 환영합니다."}
+      </p>
+
+      <a href="mailto:parkjh0051@gmail.com" style={{
+        display: "inline-flex", alignItems: "center", gap: "10px",
+        background: "var(--text)", color: "var(--bg)",
+        padding: "11px 24px", borderRadius: "8px",
+        fontWeight: 600, fontSize: "14px", letterSpacing: "-0.2px",
+        transition: "opacity 0.15s",
+      }}
+        onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
+        onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+      >
+        parkjh0051@gmail.com
+      </a>
+
+      {/* footer */}
+      <div style={{
+        marginTop: "96px", paddingTop: "28px",
+        borderTop: "1px solid var(--border)",
+        display: "flex", justifyContent: "space-between",
+        alignItems: "center", flexWrap: "wrap", gap: "8px",
+      }}>
+        <span style={{ fontSize: "13px", fontWeight: 600, color: "var(--dim)", letterSpacing: "-0.2px" }}>
+          Jonghyun Park · 박종현
+        </span>
+        <span style={{ fontSize: "12px", color: "var(--dim)", fontFamily: "monospace" }}>
+          Data Analyst
+        </span>
       </div>
     </section>
   );
