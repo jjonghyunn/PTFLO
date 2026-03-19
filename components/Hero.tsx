@@ -9,7 +9,7 @@ const stats = [
 
 export default function Hero({ lang }: Props) {
   return (
-    <section style={{ paddingTop: "148px", paddingBottom: "96px" }}>
+    <section className="hero-top-offset" style={{ paddingTop: "148px", paddingBottom: "96px" }}>
 
       {/* role badge */}
       <div style={{
@@ -21,8 +21,8 @@ export default function Hero({ lang }: Props) {
         Data Analyst &amp; Analytics Engineer
       </div>
 
-      {/* avatar + name row */}
-      <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "10px" }}>
+      {/* avatar + name block */}
+      <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "32px" }}>
         <img
           src="https://avatars.githubusercontent.com/u/208093681?v=4"
           alt="Jonghyun Park"
@@ -30,25 +30,27 @@ export default function Hero({ lang }: Props) {
           height={56}
           style={{ borderRadius: "50%", border: "1px solid var(--border)", flexShrink: 0 }}
         />
-        <h1 style={{
-          fontSize: "clamp(32px, 5vw, 56px)",
-          fontWeight: 600,
-          letterSpacing: "-1.5px",
-          lineHeight: 1.08,
-          color: "var(--text)",
-        }}>
-          Jonghyun Park
-        </h1>
+        <div>
+          <h1 style={{
+            fontSize: "clamp(28px, 5vw, 52px)",
+            fontWeight: 600,
+            letterSpacing: "-1.5px",
+            lineHeight: 1.08,
+            color: "var(--text)",
+            marginBottom: "4px",
+          }}>
+            Jonghyun Park
+          </h1>
+          <p style={{
+            fontSize: "clamp(14px, 2vw, 18px)",
+            fontWeight: 300,
+            letterSpacing: "-0.3px",
+            color: "var(--dim)",
+          }}>
+            박종현
+          </p>
+        </div>
       </div>
-      <p style={{
-        fontSize: "clamp(20px, 3vw, 30px)",
-        fontWeight: 300,
-        letterSpacing: "-0.5px",
-        color: "var(--dim)",
-        marginBottom: "32px",
-      }}>
-        박종현
-      </p>
 
       {/* description */}
       <p style={{

@@ -25,42 +25,60 @@ export default function Home() {
         backdropFilter: "blur(20px)",
         borderBottom: "1px solid var(--border)",
       }}>
-        <div style={{ maxWidth: "780px", margin: "0 auto", padding: "0 24px", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span className="nav-logo" style={{ fontFamily: "Pretendard", fontWeight: 700, fontSize: "15px", letterSpacing: "-0.3px", color: "var(--text)", whiteSpace: "nowrap" }}>
-            Jonghyun Park
-          </span>
+        <div className="nav-inner" style={{ maxWidth: "780px", margin: "0 auto", padding: "0 24px", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "0px" }}>
-            {/* 모바일에서 숨김 */}
-            <div className="nav-links-mobile" style={{ display: "flex" }}>
-              {navLinks.map((l) => (
-                <a key={l.href} href={l.href} style={{
-                  color: "var(--muted)", fontSize: "13px", fontWeight: 400,
-                  padding: "6px 14px", borderRadius: "6px",
-                  transition: "color 0.15s",
-                }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
-                >
-                  {lang === "en" ? l.en : l.ko}
-                </a>
-              ))}
+          {/* 1줄: 이름 + 언어토글 */}
+          <div className="nav-top-row" style={{ display: "contents" }}>
+            <span className="nav-logo" style={{ fontFamily: "Pretendard", fontWeight: 700, fontSize: "15px", letterSpacing: "-0.3px", color: "var(--text)", whiteSpace: "nowrap" }}>
+              Jonghyun Park
+            </span>
+
+            <div style={{ display: "flex", alignItems: "center" }}>
+              {/* PC: 링크들 인라인 */}
+              <div className="nav-links-pc" style={{ display: "flex" }}>
+                {navLinks.map((l) => (
+                  <a key={l.href} href={l.href} style={{
+                    color: "var(--muted)", fontSize: "13px", fontWeight: 400,
+                    padding: "6px 14px", borderRadius: "6px", transition: "color 0.15s",
+                  }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
+                  >
+                    {lang === "en" ? l.en : l.ko}
+                  </a>
+                ))}
+              </div>
+
+              <button onClick={() => setLang(lang === "en" ? "ko" : "en")} style={{
+                marginLeft: "8px",
+                background: "var(--surface2)", border: "1px solid var(--border)",
+                color: "var(--muted)", borderRadius: "6px",
+                padding: "4px 11px", fontSize: "11px", fontWeight: 600, cursor: "pointer",
+                transition: "color 0.15s, border-color 0.15s", letterSpacing: "0.3px",
+              }}
+                onMouseEnter={e => { e.currentTarget.style.color = "var(--text)"; e.currentTarget.style.borderColor = "var(--dim)"; }}
+                onMouseLeave={e => { e.currentTarget.style.color = "var(--muted)"; e.currentTarget.style.borderColor = "var(--border)"; }}
+              >
+                {lang === "en" ? "한국어" : "EN"}
+              </button>
             </div>
-
-            <button onClick={() => setLang(lang === "en" ? "ko" : "en")} style={{
-              marginLeft: "8px",
-              background: "var(--surface2)", border: "1px solid var(--border)",
-              color: "var(--muted)", borderRadius: "6px",
-              padding: "4px 11px", fontSize: "11px", fontWeight: 600, cursor: "pointer",
-              transition: "color 0.15s, border-color 0.15s",
-              letterSpacing: "0.3px",
-            }}
-              onMouseEnter={e => { e.currentTarget.style.color = "var(--text)"; e.currentTarget.style.borderColor = "var(--dim)"; }}
-              onMouseLeave={e => { e.currentTarget.style.color = "var(--muted)"; e.currentTarget.style.borderColor = "var(--border)"; }}
-            >
-              {lang === "en" ? "한국어" : "EN"}
-            </button>
           </div>
+
+          {/* 2줄 (모바일 전용): 링크들 */}
+          <div className="nav-links-row" style={{ display: "none" }}>
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} style={{
+                color: "var(--muted)", fontSize: "13px", fontWeight: 400,
+                padding: "4px 10px", borderRadius: "6px", transition: "color 0.15s",
+              }}
+                onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
+              >
+                {lang === "en" ? l.en : l.ko}
+              </a>
+            ))}
+          </div>
+
         </div>
       </nav>
 
