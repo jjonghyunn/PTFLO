@@ -11,6 +11,15 @@ export default function Hero({ lang }: Props) {
   return (
     <section style={{ paddingTop: "148px", paddingBottom: "96px" }}>
 
+      {/* avatar */}
+      <img
+        src="https://github.com/jjonghyunn.png"
+        alt="Jonghyun Park"
+        width={52}
+        height={52}
+        style={{ borderRadius: "50%", border: "1px solid var(--border)", marginBottom: "24px", display: "block" }}
+      />
+
       {/* role badge */}
       <div style={{
         display: "inline-flex", alignItems: "center", gap: "6px",
