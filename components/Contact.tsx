@@ -42,8 +42,8 @@ export default function Contact({ lang }: Props) {
         display: "flex", justifyContent: "space-between",
         alignItems: "center", flexWrap: "wrap", gap: "8px",
       }}>
-        <span style={{ fontSize: "13px", fontWeight: 600, color: "var(--dim)", letterSpacing: "-0.2px" }}>
-          Jonghyun Park · 박종현
+        <span style={{ fontSize: "12px", color: "var(--dim)" }}>
+          © 2026 Jonghyun Park. All rights reserved.
         </span>
         <span style={{ fontSize: "12px", color: "var(--dim)", fontFamily: "monospace" }}>
           Data Analyst
