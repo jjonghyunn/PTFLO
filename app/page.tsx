@@ -26,23 +26,26 @@ export default function Home() {
         borderBottom: "1px solid var(--border)",
       }}>
         <div style={{ maxWidth: "780px", margin: "0 auto", padding: "0 24px", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <span style={{ fontFamily: "Pretendard", fontWeight: 700, fontSize: "15px", letterSpacing: "-0.3px", color: "var(--text)" }}>
+          <span className="nav-logo" style={{ fontFamily: "Pretendard", fontWeight: 700, fontSize: "15px", letterSpacing: "-0.3px", color: "var(--text)", whiteSpace: "nowrap" }}>
             Jonghyun Park
           </span>
 
           <div style={{ display: "flex", alignItems: "center", gap: "0px" }}>
-            {navLinks.map((l) => (
-              <a key={l.href} href={l.href} style={{
-                color: "var(--muted)", fontSize: "13px", fontWeight: 400,
-                padding: "6px 14px", borderRadius: "6px",
-                transition: "color 0.15s",
-              }}
-                onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
-                onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
-              >
-                {lang === "en" ? l.en : l.ko}
-              </a>
-            ))}
+            {/* 모바일에서 숨김 */}
+            <div className="nav-links-mobile" style={{ display: "flex" }}>
+              {navLinks.map((l) => (
+                <a key={l.href} href={l.href} style={{
+                  color: "var(--muted)", fontSize: "13px", fontWeight: 400,
+                  padding: "6px 14px", borderRadius: "6px",
+                  transition: "color 0.15s",
+                }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "var(--text)")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
+                >
+                  {lang === "en" ? l.en : l.ko}
+                </a>
+              ))}
+            </div>
 
             <button onClick={() => setLang(lang === "en" ? "ko" : "en")} style={{
               marginLeft: "8px",
