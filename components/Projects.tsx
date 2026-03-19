@@ -65,9 +65,9 @@ export default function Projects({ lang }: Props) {
                   {lang === "en" ? p.title : p.titleKo}
                 </span>
 
-                {/* tags preview — hidden when open */}
+                {/* tags preview — hidden when open, hidden on mobile */}
                 {!isOpen && (
-                  <div style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
+                  <div className="project-row-tags" style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
                     {p.tags.slice(0, 3).map(tag => (
                       <span key={tag} style={{
                         fontSize: "11px", color: "var(--dim)",

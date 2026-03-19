@@ -14,7 +14,7 @@ export default function About({ lang }: Props) {
       <Label en="About" ko="소개" lang={lang} />
       <H2 en="Who I Am" ko="저는 이런 사람입니다" lang={lang} />
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", alignItems: "start" }}>
+      <div className="grid-2col">
         <div>
           <p style={{ color: "var(--muted)", lineHeight: "1.9", fontSize: "14px", marginBottom: "16px" }}>
             {lang === "en"

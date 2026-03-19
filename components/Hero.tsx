@@ -79,11 +79,7 @@ export default function Hero({ lang }: Props) {
       </div>
 
       {/* stats */}
-      <div style={{
-        display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
-        gap: "1px", background: "var(--border)",
-        border: "1px solid var(--border)", borderRadius: "10px", overflow: "hidden",
-      }}>
+      <div className="stats-grid">
         {stats.map((s) => (
           <div key={s.num} style={{
             background: "var(--surface)", padding: "20px 24px",
