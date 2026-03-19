@@ -14,7 +14,7 @@ const navLinks = [
 ];
 
 export default function Home() {
-  const [lang, setLang] = useState<"en" | "ko">("en");
+  const [lang, setLang] = useState<"en" | "ko">("ko");
 
   return (
     <>

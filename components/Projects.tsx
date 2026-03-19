@@ -70,8 +70,8 @@ export default function Projects({ lang }: Props) {
                   <div className="project-row-tags" style={{ display: "flex", gap: "6px", flexShrink: 0 }}>
                     {p.tags.slice(0, 3).map(tag => (
                       <span key={tag} style={{
-                        fontSize: "11px", color: "var(--dim)",
-                        background: "var(--surface2)", border: "1px solid var(--border)",
+                        fontSize: "11px", color: "#aaaaaa",
+                        background: "var(--surface2)", border: "1px solid #2e2e2e",
                         borderRadius: "4px", padding: "1px 7px",
                         fontFamily: "monospace",
                       }}>
