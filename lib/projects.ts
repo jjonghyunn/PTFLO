@@ -206,7 +206,7 @@ export const skillCategories = [
   {
     name: "Analytics & APIs",
     nameKo: "애널리틱스 & API",
-    items: ["Adobe Analytics", "Adobe Analytics API", "TMAP API", "GA4", "JSON / REST API"],
+    items: ["Adobe Analytics", "Adobe Analytics API", "GA4", "JSON / REST API"],
   },
   {
     name: "Automation & Crawling",
