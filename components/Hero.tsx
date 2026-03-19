@@ -13,7 +13,7 @@ export default function Hero({ lang }: Props) {
 
       {/* avatar */}
       <img
-        src="https://github.com/jjonghyunn.png"
+        src="https://avatars.githubusercontent.com/u/208093681?v=4"
         alt="Jonghyun Park"
         width={52}
         height={52}
