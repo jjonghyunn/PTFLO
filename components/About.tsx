@@ -1,10 +1,9 @@
 type Props = { lang: "en" | "ko" };
 
 const info = [
-  { labelEn: "Focus",       labelKo: "집중 분야", valueEn: "Pipeline Automation · Analytics Engineering",  valueKo: "파이프라인 자동화 · 애널리틱스 엔지니어링" },
-  { labelEn: "Domain",      labelKo: "도메인",    valueEn: "E-commerce · Samsung Global",                  valueKo: "이커머스 · 삼성 글로벌" },
-  { labelEn: "Stack",       labelKo: "주요 스택", valueEn: "Python · SQL · Adobe Analytics",               valueKo: "Python · SQL · Adobe Analytics" },
-  { labelEn: "Email",       labelKo: "이메일",    valueEn: "parkjh0051@gmail.com",                         valueKo: "parkjh0051@gmail.com" },
+  { labelEn: "Focus",  labelKo: "집중 분야", valueEn: "Pipeline Automation · Analytics Engineering", valueKo: "파이프라인 자동화 · 애널리틱스 엔지니어링" },
+  { labelEn: "Domain", labelKo: "도메인",    valueEn: "E-commerce · Samsung Global",                 valueKo: "이커머스 · 삼성 글로벌" },
+  { labelEn: "Stack",  labelKo: "주요 스택", valueEn: "Python · SQL · Adobe Analytics",              valueKo: "Python · SQL · Adobe Analytics" },
 ];
 
 export default function About({ lang }: Props) {
@@ -19,12 +18,12 @@ export default function About({ lang }: Props) {
           <p style={{ color: "var(--muted)", lineHeight: "1.9", fontSize: "14px", marginBottom: "16px" }}>
             {lang === "en"
               ? "I'm a Data Analyst focused on end-to-end pipeline automation — transforming raw platform data into reliable, reproducible business reporting."
-              : "저는 원시 플랫폼 데이터를 신뢰할 수 있는 비즈니스 리포팅으로 전환하는 엔드투엔드 파이프라인 자동화에 집중하는 데이터 애널리스트입니다."}
+              : "데이터 애널리스트로서 원시 플랫폼 데이터를 신뢰할 수 있는 비즈니스 리포팅으로 자동화하는 파이프라인 설계에 집중하고 있습니다."}
           </p>
           <p style={{ color: "var(--muted)", lineHeight: "1.9", fontSize: "14px" }}>
             {lang === "en"
-              ? "My work spans Adobe Analytics API automation, web crawling, campaign data pipelines, and geospatial analysis. I build tools the whole team can rely on — not one-off scripts."
-              : "Adobe Analytics API 자동화, 웹 크롤링, 캠페인 파이프라인, 지리공간 분석에 걸쳐 작업합니다. 팀 전체가 의존할 수 있는 도구를 만드는 것을 목표로 합니다."}
+              ? "My work spans Adobe Analytics API automation, web crawling for tagging audits, and campaign data pipelines. I build tools the whole team can rely on — not one-off scripts."
+              : "Adobe Analytics API 자동화, 태깅 감사를 위한 웹 크롤링, 캠페인 데이터 파이프라인 구축 등 팀 전체가 반복적으로 활용할 수 있는 도구를 만드는 것을 목표로 합니다."}
           </p>
         </div>
 

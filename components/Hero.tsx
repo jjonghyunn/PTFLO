@@ -75,7 +75,7 @@ export default function Hero({ lang }: Props) {
         >
           {lang === "en" ? "View Projects" : "프로젝트 보기"}
         </a>
-        <a href="mailto:parkjh0051@gmail.com" style={{
+        <a href="#contact" style={{
           color: "var(--muted)", fontSize: "13px",
           padding: "9px 16px", borderRadius: "7px",
           border: "1px solid var(--border)",
@@ -84,7 +84,7 @@ export default function Hero({ lang }: Props) {
           onMouseEnter={e => { e.currentTarget.style.color = "var(--text)"; e.currentTarget.style.borderColor = "var(--dim)"; }}
           onMouseLeave={e => { e.currentTarget.style.color = "var(--muted)"; e.currentTarget.style.borderColor = "var(--border)"; }}
         >
-          parkjh0051@gmail.com
+          {lang === "en" ? "Contact →" : "연락하기 →"}
         </a>
       </div>
 
