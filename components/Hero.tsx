@@ -26,8 +26,8 @@ export default function Hero({ lang }: Props) {
         <img
           src="https://avatars.githubusercontent.com/u/208093681?v=4"
           alt="Jonghyun Park"
-          width={56}
-          height={56}
+          width={72}
+          height={72}
           style={{ borderRadius: "50%", border: "1px solid var(--border)", flexShrink: 0 }}
         />
         <div>
