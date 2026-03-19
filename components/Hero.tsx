@@ -11,15 +11,6 @@ export default function Hero({ lang }: Props) {
   return (
     <section style={{ paddingTop: "148px", paddingBottom: "96px" }}>
 
-      {/* avatar */}
-      <img
-        src="https://avatars.githubusercontent.com/u/208093681?v=4"
-        alt="Jonghyun Park"
-        width={52}
-        height={52}
-        style={{ borderRadius: "50%", border: "1px solid var(--border)", marginBottom: "24px", display: "block" }}
-      />
-
       {/* role badge */}
       <div style={{
         display: "inline-flex", alignItems: "center", gap: "6px",
@@ -30,17 +21,25 @@ export default function Hero({ lang }: Props) {
         Data Analyst &amp; Analytics Engineer
       </div>
 
-      {/* name */}
-      <h1 style={{
-        fontSize: "clamp(40px, 6vw, 64px)",
-        fontWeight: 800,
-        letterSpacing: "-1.5px",
-        lineHeight: 1.08,
-        color: "var(--text)",
-        marginBottom: "10px",
-      }}>
-        Jonghyun Park
-      </h1>
+      {/* avatar + name row */}
+      <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "10px" }}>
+        <img
+          src="https://avatars.githubusercontent.com/u/208093681?v=4"
+          alt="Jonghyun Park"
+          width={56}
+          height={56}
+          style={{ borderRadius: "50%", border: "1px solid var(--border)", flexShrink: 0 }}
+        />
+        <h1 style={{
+          fontSize: "clamp(32px, 5vw, 56px)",
+          fontWeight: 600,
+          letterSpacing: "-1.5px",
+          lineHeight: 1.08,
+          color: "var(--text)",
+        }}>
+          Jonghyun Park
+        </h1>
+      </div>
       <p style={{
         fontSize: "clamp(20px, 3vw, 30px)",
         fontWeight: 300,
