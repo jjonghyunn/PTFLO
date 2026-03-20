@@ -17,8 +17,8 @@ export default function About({ lang }: Props) {
         <div>
           <p style={{ color: "var(--muted)", lineHeight: "1.9", fontSize: "14px", marginBottom: "16px" }}>
             {lang === "en"
-              ? "I'm a Data Analyst focused on end-to-end pipeline automation — transforming raw platform data into reliable, reproducible business reporting."
-              : "데이터 애널리스트로서 원시 플랫폼 데이터를 신뢰할 수 있는 비즈니스 리포팅으로 자동화하는 파이프라인 설계에 집중하고 있습니다."}
+              ? "e-commerce analytics across 30+ global sites — building pipelines that turn raw Adobe Analytics data into actionable reports."
+              : "글로벌 소비자 가전 브랜드의 이커머스 데이터를 전담 분석합니다. 30개 이상 국가 사이트, 연 6회 이상 대형 캠페인 데이터를 파이프라인으로 자동화하고 있습니다."}
           </p>
           <p style={{ color: "var(--muted)", lineHeight: "1.9", fontSize: "14px" }}>
             {lang === "en"
