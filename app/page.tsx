@@ -4,12 +4,14 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import MapCollection from "@/components/MapCollection";
 import Contact from "@/components/Contact";
 
 const navLinks = [
   { href: "#about",    en: "About",    ko: "소개" },
   { href: "#skills",   en: "Skills",   ko: "스킬" },
   { href: "#projects", en: "Projects", ko: "프로젝트" },
+  { href: "#collection", en: "Collection", ko: "수집" },
   { href: "#contact",  en: "Contact",  ko: "연락처" },
 ];
 
@@ -85,6 +87,7 @@ export default function Home() {
         <About lang={lang} />
         <Skills lang={lang} />
         <Projects lang={lang} />
+        <MapCollection lang={lang} />
         <Contact lang={lang} />
       </main>
     </>
